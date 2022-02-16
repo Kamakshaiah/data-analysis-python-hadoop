@@ -1,0 +1,32 @@
+import pandas as pd
+import os
+os.listdir()
+df = pd.read_csv("part-r-00000")
+df
+df.columns
+df = pd.read_csv("part-r-00000", sep="\t")
+df
+df.columns
+df_new = df.rename(columns=['c1', 'c2'])
+df
+type(df)
+df.columns
+df = pd.read_csv("part-r-00000", sep="\t", header=(0))
+df
+df.columns
+df = pd.read_csv("part-r-00000", sep="\t", header=("c1", "c2"))
+df = pd.read_csv("part-r-00000", sep="\t", header=["c1", "c2"])
+df = pd.read_csv("part-r-00000", sep="\t", header=[1, 2])
+df
+exit()
+import pandas as pd
+import os
+os.listdir()
+df = pd.read_csv("part-r-0000", sep="\t")
+df = pd.read_csv("part-r-00000", sep="\t")
+df
+df.columns
+df['f'].mean
+df['f']
+df['f'].mean()
+exit()
