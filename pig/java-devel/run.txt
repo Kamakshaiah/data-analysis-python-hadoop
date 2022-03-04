@@ -1,0 +1,10 @@
+$cd PIG_HOME/bin 
+$./pig –x local 
+
+REGISTER '/$PIG_HOME/sample_udf.jar'
+DEFINE sample_eval sample_eval();
+
+grunt> emp_data = LOAD 'hdfs://localhost:9000/pig_data/emp1.txt' USING PigStorage(',')
+   as (id:int, name:chararray, age:int, city:chararray);
+
+grunt> Upper_case = FOREACH emp_data GENERATE sample_eval(name);

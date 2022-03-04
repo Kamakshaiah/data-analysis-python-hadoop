@@ -1,0 +1,5 @@
+# https://svn.apache.org/repos/asf/pig/trunk/src/python/streaming/pig_util.py
+
+Register 'test.py' using streaming_python as myfuncs;
+register 'test.py' using org.apache.pig.scripting.streaming.python.PythonScriptEngine as myfuncs;
+b = foreach a generate myfuncs.concat('hello', 'world'), myfuncs.square(3);

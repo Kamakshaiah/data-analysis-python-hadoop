@@ -1,0 +1,2 @@
+https://pypi.org/project/PyHive/
+https://docs.microsoft.com/en-us/azure/hdinsight/hadoop/python-udf-hdinsight
