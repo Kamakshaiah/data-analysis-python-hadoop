@@ -1,11 +1,11 @@
-class Mapper(api.Mapper):
+def mapper(_, text, writer):
+    for word in text.split():
+        writer.emit(word, 1)
 
-    def map(self, context):
-        for w in context.value.split():
-            context.emit(w, 1)
-class Reducer(api.Reducer):
 
-    def reduce(self, context):
-        context.emit(context.key, sum(context.values))
+def reducer(word, icounts, writer):
+    writer.emit(word, sum(icounts))
+    
+
 # run
 # pydoop script script.py hdfs_input hdfs_output
