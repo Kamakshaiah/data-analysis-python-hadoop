@@ -1,2 +1,0 @@
-https://www.tutorialspoint.com/apache_pig/apache_pig_user_defined_functions.htm
-https://pig.apache.org/docs/r0.17.0/udf.html
