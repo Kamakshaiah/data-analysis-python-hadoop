@@ -1,0 +1,7 @@
+show databases;  
+create database demo;  
+show databases;  
+create a database if not exists demo;  
+create the database demo WITH DBPROPERTIES ('creator' = 'mk', 'date' = '2019-06-03'); 
+describe database extended demo;  
+  

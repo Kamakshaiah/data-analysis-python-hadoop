@@ -1,0 +1,28 @@
+# https://www.javatpoint.com/hiveql-join
+# Inner Join
+
+use hiveql;  
+
+create table employee(empid int, empname string , state string)  
+row format delimited fields terminated by ',' ;  
+
+load data local inpath '/home/hive/employee' into table employee;  
+
+create table employee_department(depid int, department_name string)  
+row format delimited fields terminated by ',' ;  
+
+load data local inpath '/home/hive/employee_department' into table employee_department;  
+
+select  e1.empname, e2.department_name from employee e1 join employee_department e2 on e1.empid= e2.depid;  
+
+# outer join
+
+select  e1.empname, e2.department_name from employee e1 left outer join employee_department e2 on e1.empid= e2.depid;  
+
+# right outer join
+
+select  e1.empname, e2.department_name from employee e1 right outer join employee_department e2 on e1.empid= e2.depid;  
+
+# full outer join
+
+select  e1.empname, e2.department_name from employee e1 full outer join employee_department e2 on e1.empid= e2.depid; 

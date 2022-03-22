@@ -1,0 +1,18 @@
+ use showbucket;  
+
+create table emp_demo (Id int, Name string , Salary float)    
+row format delimited fields terminated by ',' ;   
+
+load data local inpath '/home/hive/emp_details' into table emp_demo;  
+
+set hive.enforce.bucketing = true;  
+
+create table emp_bucket(Id int, Name string , Salary float) clustered by (Id) into 3 buckets row format delimited fields terminated by ',' ;    
+
+ insert overwrite table emp_bucket select * from emp_demo;    
+ 
+ # retrieving from buckets
+ 
+hdfs fs -cat /user/hive/warehouse/showbucket.db/emp_bucket/000000_0
+hdfs fs -cat /user/hive/warehouse/showbucket.db/emp_bucket/000000_1
+hdfs fs -cat /user/hive/warehouse/showbucket.db/emp_bucket/000000_2

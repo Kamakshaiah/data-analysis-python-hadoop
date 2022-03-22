@@ -1,0 +1,8 @@
+https://stackoverflow.com/questions/70523635/hbase-shell-org-apache-hadoop-hbase-ipc-servernotrunningyetexception-server-i
+
+<property>
+  <name>hbase.wal.provider</name>
+  <value>filesystem</value>
+</property>
+
+for 'status' command failure...

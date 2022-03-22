@@ -1,0 +1,7 @@
+https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.0.1/migrating-data/content/hive_convert_an_hdfs_file_to_orc.html
+
+https://sparkbyexamples.com/apache-hive/hive-delete-and-update-records-using-acid-transactions/
+
+https://www.geeksforgeeks.org/hive-alter-table/
+
+https://www.tutorialspoint.com/hive/hive_alter_table.htm (java development)
