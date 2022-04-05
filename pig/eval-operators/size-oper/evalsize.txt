@@ -1,0 +1,5 @@
+Java, James Gosling
+C, Dennis Riche
+C++, Bjorn Stroustrop
+R, Ross & Robert
+Python, Guido Von Rossum

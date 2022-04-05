@@ -1,0 +1,20 @@
+# https://stackoverflow.com/questions/27099898/java-net-urisyntaxexception-when-starting-hive
+
+
+
+Put the following at the beginning of hive-site.xml
+
+  <property>
+    <name>system:java.io.tmpdir</name>
+    <value>/tmp/hive/java</value>
+  </property>
+  <property>
+    <name>system:user.name</name>
+    <value>${user.name}</value>
+  </property>
+
+
+<property>
+    <name>hive.server2.active.passive.ha.enable</name>
+    <value>false</value> # change false to true
+</property>

@@ -33,7 +33,7 @@
                       
                     HTable table = new HTable(conf,args[0]);  
                   
-                    File f = new File("/home/training/Desktop/data");  
+                    File f = new File("use-case-data.txt");  
                     BufferedReader br = new BufferedReader(new FileReader(f));  
                     String line = br.readLine();  
                     int i =1;  

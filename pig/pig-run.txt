@@ -1,0 +1,110 @@
+pig -h
+pig -h properties
+pig -x local 
+sh ls
+sh pwd
+sh ls
+
+A = LOAD 'test.txt' USING PigStorage(',');
+DUMP A;
+quit
+
+sh ls
+A = load 'test.txt' using PigStorage(',');
+DUMP A;
+
+sh ls
+sh cat test.txt
+quit
+
+sh ls
+dat = load 'sample-data.csv' using PigStorage(',');
+dump dat;
+
+healthdat = load 'health-data.csv' using PigStorage(',');
+dump healthdat;
+
+healthdat = load 'health-data-1.csv' using PigStorage(',');
+dump healthdat;
+sh ls
+quit;
+
+pig -x local
+exec health-ana.pig
+sh ls
+exec health-ana.pig;
+health = load 'health-data.csv' using PigStorage(',');
+dump health;
+quit;
+sh pwd
+quit;
+
+sh ls
+sh pwd
+sh ls
+sh cat sample-data.csv
+A = LOAD 'sample-data.csv' USING PigStorage(','); 
+DUMP A; 
+B = GROUP A BY x1; 
+A = LOAD 'sample-data.csv' USING PigStorage(',') AS (x1:INT, x2:INT, x3:INT); 
+DUMP A; 
+B = GROUP A BY x1; 
+DUMP B; 
+A = LOAD 'sample-data.csv' USING PigStorage(',') AS (g:chararray, x1:INT, x2:INT, x3:INT); 
+B = GROUP B BY g;
+DUMP B;
+A = LOAD 'sample-data.csv' USING PigStorage(',') AS (g:chararray, x1:INT, x2:INT, x3:INT, x4:INT); 
+DUMP A;
+A = LOAD 'sample-data.csv' USING PigStorage(',') AS (g:chararray, x1:LONG, x2:LONG, x3:LONG, x4:LONG); 
+DUMP A;
+A = LOAD 'sample-data.csv' USING PigStorage(',') AS (g:chararray, x1:int, x2:int, x3:int, x4:int); 
+DUMP A;
+B = GROUP A BY g;
+dump B;
+C = FOREACH B GENERATE COUNT ($0); 
+DUMP C;
+A = load 'sample-data.csv' using PigStorage(',') as (x1:int, x2:int, x3:int, x4:int);
+B = group A by x1;
+C = foreach B generate count($0);
+C = foreach B generate count ($0);
+B = group A all; 
+C = foreach B generate count($0);
+C = foreach B generate $0;
+dump C;
+dump A;
+dump B;
+
+sh ls
+sdat = LOAD 'student.csv' USING PigStorage(',') AS (name:chararray, age:int, gpa:float);
+DUMP sdat;
+sdat = LOAD 'student' USING PigStorage() AS (name:chararray, age:int, gpa:float);
+DUMP sdat;
+sdat = LOAD 'student.csv' USING PigStorage(',') AS (name:chararray, age:int, gpa:float);
+X = FOREACH sdat GENERATE name, ($1);
+DUMP X;
+X = FOREACH sdat GENERATE ($0), age;
+DUMP X;
+DUMP sdat;
+B = FOREACH sdat GENERATE age, gpa;
+DUMP B;
+quit;
+sh ls; 
+quit; 
+
+A = load 'studentgrades.csv' using PigStorage(',') as (name, term, grade;)
+dump A; 
+A = load 'studentgrades.csv' using PigStorage(',') as (name, term, grade); 
+dump A; 
+B = group A by name; 
+dump B; 
+C = foreach B generate name, AVG(A.grade); 
+C = foreach B generate name, AVG(grade); 
+describe A; 
+A = load 'studentgrades.csv' using PigStorage(',') as (name, term, grade:int); 
+B = group A by name; 
+C = foreach B generate name, AVG(grade); 
+C = foreach B generate name, AVG(A.grade); 
+dump B; 
+C = foreach B generate name, AVG(A.grade); 
+C = foreach B generate group, AVG(A.grade); 
+dump C; 

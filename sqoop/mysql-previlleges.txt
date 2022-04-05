@@ -1,0 +1,2 @@
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;

@@ -1,0 +1,11 @@
+https://dev.mysql.com/doc/employee/en/employees-installation.html
+
+https://github.com/datacharmer/test_db
+
+mysql -t < employees.sql
+mysql < employees_partitioned.sql
+
+https://www.mysqltutorial.org/mysql-sample-database.aspx
+
+USE classicmodels;
+SELECT * FROM customers;

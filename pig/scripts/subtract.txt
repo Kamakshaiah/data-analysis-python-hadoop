@@ -1,0 +1,22 @@
+
+emp_sales = LOAD 'empsales.txt' USING PigStorage(',') as (sno:int, name: chararray, age:int, salary:int, dep:chararray); 
+dump emp_sales; 
+emp_bonus = LOAD 'empbonus.txt' USING PigStorage(',') as (sno:int, name: chararray, age:int, salary:int, dep:chararray); 
+dump emp_bonus; 
+cgdata = cogroup emp_sales by sno, emp_bonus by sno; 
+dump cgdata; 
+subtracteddata = foreach cgdata generate SUBTRACT(emp_sales, emp_bonus); 
+dump subtracteddata; 
+subtracteddata = foreach cgdata generate SUBTRACT(emp_bonus, emp_sales); 
+dump subtracteddata; 
+dump bag1; 
+dump bag2; 
+
+gpdata = group data by c4; 
+dump gpdata; 
+gpdata1 = group data by c2; 
+dump gpdata1; 
+cgpdata = cogroup gpdata by group, gpdata1 by group; 
+dump cgpdata; 
+res = foreach cgpdata generate SUBTRACT(gpdata, gpdata1); 
+dump res; 

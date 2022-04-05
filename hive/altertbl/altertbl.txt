@@ -1,0 +1,7 @@
+alter table emp rename to employee_data;  
+Alter table table_name add columns(column_name datatype);  # adding column
+Alter table employee_data add columns (age int);  
+Alter table table_name change old_column_name new_column_name  datatype;   
+Alter table employee_data change name first_name string;  
+alter table employee_data replace columns( id string, first_name string, age int);  
+

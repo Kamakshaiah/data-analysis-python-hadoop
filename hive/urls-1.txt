@@ -5,3 +5,10 @@ https://sparkbyexamples.com/apache-hive/hive-delete-and-update-records-using-aci
 https://www.geeksforgeeks.org/hive-alter-table/
 
 https://www.tutorialspoint.com/hive/hive_alter_table.htm (java development)
+
+https://examples.javacodegeeks.com/hive-jdbc-connection-java-example/
+
+https://stackoverflow.com/questions/49692069/how-to-create-tables-from-jdbc-program-in-hortonworks-using-hive
+
+
+https://www.tutorialspoint.com/hive/hive_create_database.htm

@@ -1,1 +1,4 @@
 https://happybase.readthedocs.io/en/latest/user.html
+https://www.bogotobogo.com/Hadoop/BigData_hadoop_HBase_Table_with_Java_API.php
+https://stackoverflow.com/questions/32188635/error-the-constructor-htable-configuration-string-is-deprecated
+https://www.tutorialspoint.com/hbase/hbase_disabling_table.htm

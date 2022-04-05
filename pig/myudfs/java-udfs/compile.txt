@@ -1,0 +1,2 @@
+sudo javac -cp $PATH:pig-0.17.0.jar:`hadoop classpath` UPPER.java
+sudo jar -cf myudfs.jar *.class

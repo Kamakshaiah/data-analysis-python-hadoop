@@ -1,0 +1,5 @@
+show databases;  
+drop database demo;  
+show databases;  
+drop database if exists demo;  
+drop database if exists demo cascade;  

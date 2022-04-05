@@ -1,0 +1,15 @@
+# order by
+
+use hiveql;  
+
+create table emp (Id int, Name string , Salary float, Department string)    
+row format delimited fields terminated by ',' ;   
+
+load data local inpath '/home/hive/emp_data' into table emp;  
+
+select * from emp order by salary desc;  
+
+# sort by
+
+select * from emp sort by salary desc;  
+

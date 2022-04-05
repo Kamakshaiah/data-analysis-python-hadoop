@@ -1,7 +1,0 @@
-load data local inpath 'emp_details' into table demo.employee;  
-
-select * from demo.employee;  
-
-load data local inpath 'emp_details1' into table demo.employee;  # appends the data to the above table
-
-select * from demo.employee;  
