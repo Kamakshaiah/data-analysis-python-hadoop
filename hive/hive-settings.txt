@@ -18,3 +18,7 @@ Put the following at the beginning of hive-site.xml
     <name>hive.server2.active.passive.ha.enable</name>
     <value>false</value> # change false to true
 </property>
+
+hive.server2.transport.mode=http
+hive.server2.thrift.http.port=10001
+hive.server2.webui.port=10002
