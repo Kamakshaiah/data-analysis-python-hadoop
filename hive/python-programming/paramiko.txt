@@ -1,0 +1,10 @@
+import os
+import paramiko
+import time 
+
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.load_host_keys(os.path.expanduser(os.path.join("~", ".ssh", "known_hosts")))
+ssh.connect('1.1.1.1', username='uid', password='pwd')
+sshin, sshout, ssherr= ssh.exec_command('hive -e "create table test(key varchar(10),keyval varchar(200))"')
+

@@ -1,0 +1,3 @@
+sudo javac -classpath $PATH:$HIVE_HOME/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/mapreduce/* HiveCreateDb.java 
+
+sudo java -Xmx2048m -classpath $PATH:$HIVE_HOME/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/mapreduce/*:. HiveJDBCConnect

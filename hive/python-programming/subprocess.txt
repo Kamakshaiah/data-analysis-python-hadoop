@@ -1,0 +1,8 @@
+myfile=open("query_result.tsv", 'w')
+p=subprocess.Popen("your query",
+        shell=True,
+        stdout=myfile,stderr=subprocess.PIPE)
+stdout,stderr = p.communicate()
+if p.returncode != 0:
+    print stderr
+    sys.exit(1)

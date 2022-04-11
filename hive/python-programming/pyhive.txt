@@ -1,0 +1,10 @@
+from pyhive import hive
+import pandas as pd
+
+#Create Hive connection 
+conn = hive.Connection(host="10.111.22.11", port=10000, username="user1")
+
+# Read Hive table and Create pandas dataframe
+df = pd.read_sql("SELECT * FROM db_Name.table_Name limit 10", conn)
+print(df.head())
+
