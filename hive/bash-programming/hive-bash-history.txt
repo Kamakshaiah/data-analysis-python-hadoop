@@ -1,0 +1,12 @@
+# hive bash commands
+
+start-all.sh
+jps
+hive -e "show databases;"
+hive -e "show tables;"
+hive -e "select * from students limit 5;"
+hive -e "select * from students;"
+hive -e "select * show tables;"
+hive -e "show tables;"
+hive -e "select * from studentdata;"
+
