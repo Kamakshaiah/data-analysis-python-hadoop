@@ -5,6 +5,6 @@ import pandas as pd
 conn = hive.Connection(host="localhost", port=10000)
 
 # Read Hive table and Create pandas dataframe
-df = pd.read_sql("show databases", conn)
-print(df.head())
+df = pd.read_sql("show databases;", conn)
+print(df)
 

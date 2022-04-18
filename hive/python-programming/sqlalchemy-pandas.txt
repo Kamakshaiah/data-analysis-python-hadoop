@@ -1,0 +1,16 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+SECRET = {'username':'lol', 'password': 'lol'}
+user_name = SECRET.get('username')
+passwd = SECRET.get('password')
+
+host_server = 'x.x.x.x'
+port = '10000'
+database = 'default'
+conn = f'hive://{user_name}:{passwd}@{host_server}:{port}/{database}'
+engine = create_engine(conn, connect_args={'auth': 'LDAP'})
+
+query = "select * from tablename limit 100"
+data = pd.read_sql(query, con=engine)
+print(data)

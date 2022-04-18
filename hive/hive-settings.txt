@@ -1,7 +1,5 @@
 # https://stackoverflow.com/questions/27099898/java-net-urisyntaxexception-when-starting-hive
 
-
-
 Put the following at the beginning of hive-site.xml
 
   <property>
@@ -19,6 +17,22 @@ Put the following at the beginning of hive-site.xml
     <value>false</value> # change false to true
 </property>
 
+hive.server2.transport.mode=binary
+hive.server2.thrift.http.port=10000
+
+
 hive.server2.transport.mode=http
 hive.server2.thrift.http.port=10001
 hive.server2.webui.port=10002
+
+<property>
+  <name>hive.server2.enable.doAs</name>
+  <value>false</value> 
+</property>
+
+<property>
+      <name>hive.conf.restricted.list</name>
+      <value>hive.security.authenticator.manager,hive.security.authorization.manager,**hive.users.in.admin.role**</value>
+</property>
+
+I just removed the part highlighted above in Bold : hive.users.in.admin.role.  
